@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7fb" />
+    <meta
+      name="description"
+      content="A simple applicant tracking system for managing candidates, jobs, and interviews."
+    />
+    <title>TalentFlow — Applicant Tracking</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="TalentFlow home" data-route="overview">
+          <span class="brand-mark" aria-hidden="true">t</span>
+          <span class="brand-name">talent<span>flow</span></span>
+        </a>
+
+        <div class="workspace-label">WORKSPACE</div>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <button class="nav-link is-active" type="button" data-route="overview">
+            <span class="nav-icon" aria-hidden="true">⌂</span><span>Overview</span>
+          </button>
+          <button class="nav-link" type="button" data-route="pipeline">
+            <span class="nav-icon" aria-hidden="true">▤</span><span>Pipeline</span>
+            <span class="nav-count" id="pipeline-count">0</span>
+          </button>
+          <button class="nav-link" type="button" data-route="candidates">
+            <span class="nav-icon" aria-hidden="true">♙</span><span>Candidates</span>
+          </button>
+          <button class="nav-link" type="button" data-route="jobs">
+            <span class="nav-icon" aria-hidden="true">▣</span><span>Jobs</span>
+          </button>
+          <button class="nav-link" type="button" data-route="interviews">
+            <span class="nav-icon" aria-hidden="true">◷</span><span>Interviews</span>
+          </button>
+          <button class="nav-link" type="button" data-route="reports">
+            <span class="nav-icon" aria-hidden="true">▥</span><span>Reports</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="plan-card">
+            <span class="plan-icon" aria-hidden="true">✦</span>
+            <div><strong>Hiring, made human.</strong><p>Your team is on a roll.</p></div>
+          </div>
+          <button class="profile-button" type="button" aria-label="Recruiter profile">
+            <span class="avatar avatar-indigo">JD</span>
+            <span class="profile-copy"><strong>Jordan Davis</strong><small>Recruiter</small></span>
+            <span class="profile-more" aria-hidden="true">···</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button class="menu-button" id="menu-button" type="button" aria-label="Toggle navigation">☰</button>
+          <div class="breadcrumbs"><span>Workspace</span><span class="crumb-slash">/</span><strong id="page-crumb">Overview</strong></div>
+          <div class="topbar-actions">
+            <label class="search-box">
+              <span aria-hidden="true">⌕</span>
+              <input id="global-search" type="search" placeholder="Search candidates..." aria-label="Search candidates" />
+              <kbd>/</kbd>
+            </label>
+            <button class="icon-button notification-button" type="button" aria-label="Notifications">
+              ♧<span class="notification-dot"></span>
+            </button>
+            <span class="avatar avatar-indigo top-avatar" aria-hidden="true">JD</span>
+          </div>
+        </header>
+
+        <section class="page-content" id="page-content" aria-live="polite"></section>
+      </main>
+    </div>
+    <div class="modal-root" id="modal-root"></div>
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <script src="./script.js" defer></script>
+  </body>
+</html>
